@@ -15,7 +15,7 @@ const config = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[hash].[name].js',
+    filename: `[name].${isProduction ? '[hash].js' : 'js'}`,
   },
   devServer: {
     open: true,
@@ -24,7 +24,7 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: '[hash].[name].html',
+      filename: `index.${isProduction ? '[hash].html' : 'html'}`,
     }),
     new CleanWebpackPlugin(),
 
@@ -66,7 +66,7 @@ module.exports = () => {
 
     config.plugins.push(
       new MiniCssExtractPlugin({
-        filename: '[hash].[name].css',
+        filename: '[name].[hash].css',
       }),
     );
   } else {
