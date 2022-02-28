@@ -8,71 +8,20 @@ html {
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
   color: white;
   background-color: darkslategray;
 }
 
-.cards-field {
+main {
   display: flex;
-  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  min-height: calc(100vh - 2rem);
 }
 
-.card-container {
+footer {
   display: flex;
-  flex: 1 0 20%;
   align-items: center;
-  justify-content: space-around;
-  margin: 1%;
-  perspective: 30rem;
-  cursor: pointer;
-
-  &:hover > .card {
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 50%);
-    transform: translateZ(2rem);
-  }
-}
-
-.card {
-  border-radius: 0.5rem;
-  width: 10rem;
-  height: 12rem;
-  box-shadow: 0 0 0.5rem black;
-  transform-origin: right;
-  transform-style: preserve-3d;
-  transition: all 0.5s;
-
-  &__front {
-    background-color: crimson;
-  }
-
-  &__back {
-    background-image: url('./assets/card-back.png');
-    background-position: center;
-    background-size: cover;
-    background-color: gray;
-    transform: rotateY(180deg);
-  }
-
-  &.flipped {
-    transform: rotateY(180deg) translateX(-100%);
-    transform-origin: left;
-  }
-
-  &__front,
-  &__back {
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: inherit;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
+  justify-content: center;
+  height: 2rem;
 }
