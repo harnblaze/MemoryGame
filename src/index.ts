@@ -6,5 +6,5 @@ window.onload = () => {
 
   if (!appElement) throw new Error('App root element is not found');
 
-  new App(appElement);
+  new App(appElement).start();
 };
